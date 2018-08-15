@@ -17,6 +17,7 @@ c,addr = s.accept()
 while True:
 	cmd = input("->")
 	if cmd == "quit":
+		c.send(str.encode("quit"))
 		print("Closing connection ...")
 		break 
 	# Accepting a connection from the client socket 

