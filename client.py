@@ -20,7 +20,7 @@ while True:
 
 	p = subprocess.Popen(get_resp.decode("UTF-8"), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.PIPE)
 
-	s.send(p.stdout.read())
+	s.send(p.stdout.read() + "\n".encode("UTF-8"))
 
 	retval = p.wait()
 
